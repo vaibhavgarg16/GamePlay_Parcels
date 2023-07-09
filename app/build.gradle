@@ -1,0 +1,212 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+/* For Twitter Fabric SDK */
+apply plugin: 'io.fabric'
+apply plugin: 'com.google.gms.google-services'
+
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+/* End of Twitter Fabric SDK */
+
+
+
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "30.0.0"
+    defaultConfig {
+        applicationId "com.game.playparcels"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        setProperty("archivesBaseName", "GamePlay")
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    defaultConfig {
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.navigation:navigation-fragment:2.0.0'
+    implementation 'androidx.navigation:navigation-ui:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
+
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-auth:20.0.1'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'androidx.work:work-runtime:2.3.4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+//    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.facebook.android:facebook-login:8.2.0'
+    implementation 'com.google.firebase:firebase-messaging:21.1.0'
+    implementation 'com.google.firebase:firebase-analytics:18.0.3'
+
+
+
+    //AShared Preference Manager
+    implementation 'com.aliassadi:power-preference-lib:2.0.0'
+
+    implementation 'com.balysv:material-ripple:1.0.2'
+
+    //Spinner Games page
+    implementation 'com.jaredrummler:material-spinner:1.3.1'
+
+
+    implementation 'de.clemenskeppler:MaterialSearchView:1.0.4'
+
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+
+
+    //to show toast
+    implementation 'com.androidadvance:topsnackbar:1.1.1'
+
+    //to show toast third party library. https://github.com/GrenderG/Toasty
+    implementation 'com.github.GrenderG:Toasty:1.5.0'
+
+    //swipe left on queue page design
+    implementation 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
+
+    //circle image view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+
+    //roundcorner 3 dependency
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3' // maybe already exists or add
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-rc1'
+    // if you want to use motion layout
+    implementation 'com.github.zladnrms:RoundableLayout:1.1.3'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.1'
+    implementation 'com.daimajia.easing:library:2.0@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+
+
+    /* For twitter login */
+    implementation('com.twitter.sdk.android:twitter:1.8.0@aar') {
+        transitive = true
+    }
+
+    //firebase
+    implementation 'com.google.firebase:firebase-auth:20.0.1'
+
+
+    //glide
+    //caution - donot update
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    //Flow Text
+    implementation 'com.github.deano2390:FlowTextView:2.0.5'
+
+    //overscroll
+    // implementation 'com.chauthai.overscroll:overscroll-bouncy:0.1.1'
+
+    //drag list
+    implementation 'me.rishabhkhanna:RecyclerviewSwipeDrag:1.3.1'
+    //implementation 'com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:1.0.0'
+
+    /* //elastic
+     implementation 'com.github.XanderWang:elasticity:1.0.0'*/
+
+    //biomatric
+    implementation 'androidx.biometric:biometric:1.0.1'
+
+
+    //for expandable toolbar (fullcategory fragment)
+
+    //navigation drawer
+    implementation 'com.github.nirwannursabda:expandable-navigation:0.1.2'
+
+
+    // implementation 'com.github.faradaj:BlurBehind:1.0.3'
+/*
+    implementation 'com.github.jrvansuita:GaussianBlur:1.0.3'
+
+    implementation 'jp.wasabeef:blurry:4.0.0'*/
+
+    // implementation 'com.github.mirrajabi:view-effects:e355a1bac4'
+
+    implementation 'com.github.mmin18:realtimeblurview:1.2.1'
+
+    implementation 'com.baoyz.pullrefreshlayout:library:1.2.0'
+
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+
+//    implementation 'jp.wasabeef:blurry:4.0.0'
+
+
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+
+//    implementation 'com.gauravk.bubblenavigation:bubblenavigation:1.0.7'
+
+    implementation 'ru.alexbykov:nopaginate:0.9.9'
+
+    implementation 'com.github.yesterselga:password-strength-checker-android:v1.0'
+
+    implementation 'net.webilisim.webslider:webslider:1.0.3'
+
+
+    //Scroll Decor
+
+    //implementation 'com.github.Ferfalk:SimpleSearchView:0.1.6'
+
+
+    //rotatingtext
+    // https://github.com/ayltai/Android-Lib-VerticalMarqueeTextView
+    // implementation 'android.lib.verticalmarqueetextview:VerticalMarqueeTextView:1.0.2'
+
+
+    // implementation 'jp.wasabeef:blurry:4.0.0'
+
+    implementation 'com.google.android.material:material:1.3.0'
+
+    implementation 'com.sasank.roundedhorizontalprogress:roundedhorizontalprogress:1.0.1'
+
+    implementation 'com.github.ravindu1024:android-keyboardlistener:1.0.0'
+    implementation 'com.github.maciekczwa:shadowlib:1.0.2'
+
+
+
+    implementation 'jp.wasabeef:blurry:4.0.0'
+
+
+    //Custom progress dialog third party github
+    implementation 'cc.cloudist.acplibrary:library:1.2.1'
+
+}
+
+
+

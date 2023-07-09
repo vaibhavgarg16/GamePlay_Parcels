@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/XBOX_ONE"
+            android:icon="@drawable/xboxicon"
+            android:title="@string/XBOX_ONE" />
+
+        <item
+            android:id="@+id/PLAYSTATION"
+            android:icon="@drawable/ps4icon"
+            android:title="@string/PLAYSTATION" />
+        <item
+            android:id="@+id/NINTENDO_SWITCH"
+            android:icon="@drawable/switchicon"
+            android:title="@string/NINTENDO_SWITCH" />
+        <item
+            android:id="@+id/xbox_series_x"
+            android:icon="@drawable/switchicon"
+            android:title="@string/xbox_series_x" />
+
+        <item
+            android:id="@+id/playstation_5"
+            android:icon="@drawable/switchicon"
+            android:title="@string/playstation_5" />
+    </group>
+
+   <!-- <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/crossx"
+                android:title="menu_share" />
+
+        </menu>
+    </item>-->
+
+</menu>

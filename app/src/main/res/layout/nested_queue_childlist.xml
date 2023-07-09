@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/holderid"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <com.chauthai.swipereveallayout.SwipeRevealLayout
+        android:id="@+id/swipe_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dragEdge="right"
+        app:minDistRequestDisallowParent="1dp"
+        app:mode="normal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/returnbtn"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/holo_blue_dark"
+                android:gravity="center"
+                android:text="Return"
+                android:textColor="@android:color/white" />
+
+            <ProgressBar
+                android:id="@+id/spinner"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/holo_red_dark"
+                android:gravity="center"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/returnbtnphoto"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/holo_green_light"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Return With Photo"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/swipe_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:weightSum="4">
+
+            <ImageView
+                android:id="@+id/imagee"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1.1"
+                android:scaleType="fitXY"
+                android:src="@drawable/demo5" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:text="UFC 3">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="UFC 3"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/releasedate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Arrived 22/03/2020"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/availabletxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="High Availablity"
+                    android:textAllCaps="false"
+                    android:textColor="@color/green"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_weight=".9"
+                android:gravity="right">
+
+                <TextView
+                    android:id="@+id/texttttt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="0"
+                    android:textColor="@color/gray"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/iconimage"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:padding="15dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_baseline_dehaze_24_new" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </com.chauthai.swipereveallayout.SwipeRevealLayout>
+
+    <TextView
+        android:id="@+id/preturn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Order has been marked returned"
+        android:textColor="@color/yellow"
+        android:textSize="18sp"
+        android:visibility="visible" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp" />
+
+
+</LinearLayout>

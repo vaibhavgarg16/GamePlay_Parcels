@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:example="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/holderid"
+    android:orientation="vertical"
+    android:layout_width="170dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imagee"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        android:foreground="@drawable/custom_ripple_recyclerview"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Tomb Rider"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:ignore="MissingPrefix,RtlHardcoded" />
+
+    <TextView
+            android:id="@+id/releasedate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Released 17/07/2020"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+
+</LinearLayout>

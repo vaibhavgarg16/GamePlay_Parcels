@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/holderchildid"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imagee"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_margin="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/demo1" />
+
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="40dp"
+
+        android:fontFamily="@font/roboto_light"
+        android:gravity="left"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"
+        android:layout_toStartOf="@+id/nextwhiteoutline"
+        android:layout_toEndOf="@+id/imagee"
+        android:fontFamily="@font/roboto_light"
+        android:gravity="center_vertical"
+        android:text="Game Name"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:id="@+id/nextwhiteoutline"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="5dp"
+        android:layout_centerVertical="true"
+        android:padding="1dp"
+        android:src="@drawable/nextwhiteoutline" />
+
+    <TextView
+        android:id="@+id/releasedate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Released 17/07/2020"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/gray"
+        android:layout_height="1dp"/>
+
+</RelativeLayout>

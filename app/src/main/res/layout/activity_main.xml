@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:windowSoftInputMode="adjustResize|stateAlwaysHidden">
+
+
+    <include layout="@layout/include_navigation"/>
+    <include layout="@layout/include_header"
+        android:id="@+id/header"/>
+
+
+
+
+
+    <View
+        android:id="@+id/searchshadow"
+        android:layout_width="wrap_content"
+        android:layout_height="6dp"
+        android:background="@drawable/shadow_reverse"
+        android:visibility="visible"
+        android:layout_below="@id/rlone"/>
+
+    <View
+        android:id="@+id/homeshadow"
+        android:layout_width="wrap_content"
+        android:layout_height="6dp"
+        android:layout_above="@id/container"
+        android:background="@drawable/shadow_reverse"
+        android:visibility="visible" />
+
+    <include layout="@layout/include_main_container"/>
+
+  <include layout="@layout/include_searchframe"/>
+
+
+    <!--android:background="#E15E6C88"-->
+    <include layout="@layout/include_youtube"/>
+
+   <include layout="@layout/include_blurbar"/>
+
+    <include layout="@layout/include_blurbar1"/>
+
+
+</RelativeLayout>

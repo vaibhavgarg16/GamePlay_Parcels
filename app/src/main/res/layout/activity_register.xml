@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:scaleType="centerCrop"
+    tools:context=".Login.RegisterActivity">
+
+    <!--74446084-->
+    <androidx.cardview.widget.CardView
+        android:elevation="20dp"
+        app:cardBackgroundColor="@color/background"
+        android:paddingBottom="30dp"
+        android:paddingTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:padding="10dp"
+                android:id="@+id/idone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/backpress"
+                    android:backgroundTint="#00FFFFFF"
+                    android:src="@drawable/arrow_back"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+
+                <ImageButton
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="#00FFFFFF"
+                    android:src="@drawable/logo"
+                    android:scaleType="centerCrop"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"/>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_below="@+id/idone"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:layout_height="match_parent">
+                <!--  <TextView
+                      android:layout_width="match_parent"
+                      android:text="Email"
+                      android:textStyle="bold"
+                      android:textSize="20sp"
+                      android:textColor="@color/white"
+                      android:layout_height="wrap_content"/>-->
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_marginTop="3dp"
+                    android:inputType="textEmailAddress"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/tagborder"
+                    android:hint="Email *"
+                    android:layout_height="wrap_content"/>
+
+                <!-- <TextView
+                     android:layout_width="match_parent"
+                     android:text="Password"
+                     android:layout_marginTop="15dp"
+                     android:textStyle="bold"
+                     android:textSize="20sp"
+                     android:textColor="@color/white"
+                     android:layout_height="wrap_content"/>-->
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/tagborder"
+                    android:hint="Password*"
+                    android:inputType="textPassword"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="false"
+                        android:maxHeight="20dip"
+                        android:minHeight="20dip"
+                        android:layout_weight="1"
+                        android:progress="0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Weak"
+                        android:id="@+id/password_strength" />
+                </LinearLayout>
+
+
+                <EditText
+                    android:id="@+id/passwordone"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/tagborder"
+                    android:hint="Confirm Password*"
+                    android:inputType="textPassword"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:text="Continue"
+                    android:id="@+id/Continue"
+                    android:layout_marginTop="25dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/tagborder"
+                    android:layout_width="match_parent"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:layout_height="60dp"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="LOGIN"
+                            android:id="@+id/gotologin"
+                            android:textColor="@color/white"
+                            android:layout_centerVertical="true"
+                            android:layout_marginBottom="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="OR"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:layout_centerInParent="true"
+                            android:layout_marginBottom="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+
+                <Button
+                    android:text="Sign In With Facebook"
+                    android:layout_marginTop="25dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/tagborder"
+                    android:layout_width="match_parent"
+                    android:drawableStart="@drawable/facebook24"
+                    android:paddingLeft="6dp"
+                    android:backgroundTint="#3A5E94"
+                    android:layout_height="45dp"/>
+                <Button
+                    android:text="Sign In With Google"
+                    android:layout_marginTop="25dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/tagborder"
+                    android:layout_width="match_parent"
+                    android:drawableStart="@drawable/googleplus"
+                    android:paddingLeft="6dp"
+                    android:backgroundTint="#254D12"
+                    android:layout_height="45dp"/>
+
+                <Button
+                    android:text="Sign In With Twitter"
+                    android:layout_marginTop="25dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/tagborder"
+                    android:layout_width="match_parent"
+                    android:drawableStart="@drawable/twitter"
+                    android:paddingLeft="6dp"
+                    android:backgroundTint="#1864B8"
+                    android:layout_height="45dp"/>
+
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:padding="10px"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="@string/privacy_policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:id="@+id/coo"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>

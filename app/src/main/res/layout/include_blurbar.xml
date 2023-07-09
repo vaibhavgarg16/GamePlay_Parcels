@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/blurbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlone"
+        android:layout_centerInParent="true">
+
+        <com.github.mmin18.widget.RealtimeBlurView
+            android:id="@+id/rblurview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:realtimeBlurRadius="50dp"
+            app:realtimeOverlayColor="#280024FF" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/onee"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:indeterminateDrawable="@drawable/progress"
+            android:src="@drawable/logo" />
+
+        <ProgressBar
+            android:id="@+id/pbaarr"
+            android:layout_width="168dp"
+            android:layout_height="189dp"
+            android:layout_below="@+id/onee"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-141dp"
+            android:indeterminateDrawable="@drawable/progress"
+            android:text="Loader"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</merge>

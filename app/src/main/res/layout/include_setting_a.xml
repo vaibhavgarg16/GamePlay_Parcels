@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/darkmode_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/settinga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="5dp"
+        android:alpha="0.6"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/darkmode_color"
+        android:backgroundTint="#1FFFFFFF"
+        android:clipChildren="false"
+        android:elevation="24dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/pushtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Push Notification"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp" />
+
+        <View
+            android:id="@+id/viewd"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@id/socialtext"
+            android:layout_below="@id/pushtext"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/pushNotification"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="false"
+            android:layout_marginStart="185dp"
+            android:backgroundTint="@color/colorlightblue"
+            android:enabled="false"
+            android:padding="10dp"
+            android:theme="@style/SwitchTheme" />
+
+        <TextView
+            android:id="@+id/socialtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pushtext"
+            android:layout_marginTop="0dp"
+            android:padding="10dp"
+            android:text="Social Link"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp" />
+
+        <View
+            android:id="@+id/viewd2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@id/biotext"
+            android:layout_below="@id/socialtext"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/socialswitch"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_below="@+id/pushNotification"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="1dp"
+            android:backgroundTint="@color/colorlightblue"
+            android:enabled="false"
+            android:padding="10dp"
+            android:theme="@style/SwitchTheme" />
+
+        <TextView
+            android:id="@+id/biotext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/socialtext"
+            android:layout_marginTop="0dp"
+            android:padding="10dp"
+            android:text="Biometrics"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp" />
+
+        <View
+            android:id="@+id/viewd3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@id/darktext"
+            android:layout_below="@id/biotext"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/fingerprintSw"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_below="@+id/socialswitch"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="1dp"
+            android:layout_marginStart="245dp"
+            android:backgroundTint="@color/colorlightblue"
+            android:enabled="false"
+            android:padding="10dp"
+            android:theme="@style/SwitchTheme" />
+
+        <TextView
+            android:id="@+id/darktext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/biotext"
+            android:padding="10dp"
+            android:text="Darkmode"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/darkmodesw"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_below="@+id/fingerprintSw"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="216dp"
+            android:layout_marginTop="1dp"
+            android:backgroundTint="@color/colorlightblue"
+            android:enabled="false"
+            android:padding="10dp"
+            android:theme="@style/SwitchTheme" />
+
+
+    </RelativeLayout>
+
+</merge>

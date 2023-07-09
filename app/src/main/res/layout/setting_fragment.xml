@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:clipChildren="false"
+    tools:context=".ui.SettingsTab.SettingFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:clipChildren="false"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/toptxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Settings"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/guestwarning"
+            android:layout_width="match_parent"
+            android:layout_marginTop="25dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_gradient_normal_borders"
+            android:elevation="25dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="In order to get the most out of our app please sign in 🔐"
+            android:textColor="@color/white"
+            android:visibility="invisible" />
+
+       <include layout="@layout/include_setting_a"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="Legal"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <include layout="@layout/include_setting_b"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:text="About"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <ViewStub
+            android:id="@+id/settingcstub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inflatedId="@+id/settingc"
+            android:layout="@layout/include_setting_c" />
+
+
+        <TextView
+            android:id="@+id/settingbtn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/background_reverse_gradient"
+            android:gravity="center"
+            android:text="Sign In/Register"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="5dp" />
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

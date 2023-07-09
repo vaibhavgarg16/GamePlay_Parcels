@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SplashFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:layout_height="match_parent">
+
+        <!-- <ImageView
+             android:layout_width="305dp"
+             android:layout_height="305dp"
+             android:layout_centerInParent="true"
+             android:src="@mipmap/logo" />-->
+
+        <WebView
+            android:layout_width="match_parent"
+            android:id="@+id/weee"
+            android:layout_marginTop="100dp"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:layout_height="match_parent"/>
+        <!-- <pl.droidsonroids.gif.GifImageView
+             android:layout_width="match_parent"
+             android:layout_height="342dp"
+             android:layout_marginBottom="150dp"
+             android:padding="50dp"
+             android:src="@drawable/repeatlogo" />-->
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="261dp" />
+
+    </RelativeLayout>
+</FrameLayout>

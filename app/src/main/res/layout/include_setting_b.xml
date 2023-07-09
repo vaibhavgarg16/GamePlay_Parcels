@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/settingb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="5dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/darkmode_color"
+        android:backgroundTint="#1FFFFFFF"
+        android:clipChildren="false"
+        android:elevation="24dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textpp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Privacy Policy"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp" />
+
+        <View
+            android:id="@+id/viewd"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@id/termsbtn"
+            android:layout_below="@id/textpp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@+id/termsbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textpp"
+            android:layout_marginTop="0dp"
+            android:padding="10dp"
+            android:text="Terms and Conditions"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp" />
+
+
+    </RelativeLayout>
+
+</merge>

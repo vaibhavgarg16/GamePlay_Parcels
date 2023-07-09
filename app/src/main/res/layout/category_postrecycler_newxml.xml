@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_layout"
+    android:layout_width="match_parent"
+    android:layout_height="187dp"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="150dp"
+        android:layout_height="187dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/demo5" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="1dp"
+        android:text="UFC 3">
+
+
+        <TextView
+            android:id="@+id/titlee"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="left"
+            android:layout_marginLeft="303dp"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="2"
+            android:text="UFC 3"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:ignore="MissingPrefix,RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/arrivedDate"
+            android:layout_width="193dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titlee"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="303dp"
+            android:gravity="left"
+            android:text="Arrived 22/03/2020"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/availabletxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/arrivedDate"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="303dp"
+            android:text="High Availablity"
+            android:textAllCaps="false"
+            android:textColor="@color/green"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/addtoqueue"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="98dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="67dp"
+            android:background="@drawable/background_reverse_gradient"
+            android:text="Add to queue"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+
+    </RelativeLayout>
+
+
+    <View
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+</FrameLayout>

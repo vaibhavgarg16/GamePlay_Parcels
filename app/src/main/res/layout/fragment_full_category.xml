@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:paddingBottom="5dp"
+    tools:context=".SingleCategory.FullCategoryFragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/dotdot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/background"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginStart="40dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_margin="1dp"
+                    app:cardCornerRadius="0dp">
+
+                    <net.webilisim.webslider.WEBSliderView
+                        android:id="@+id/webSliderView"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/background_gradient"
+                        android:scaleType="centerCrop"
+                        app:sliderAnimationDuration="600"
+                        app:sliderAutoCycleDirection="back_and_forth"
+                        app:sliderAutoCycleEnabled="true"
+                        app:sliderCircularHandlerEnabled="true"
+                        app:sliderIndicatorAnimationDuration="600"
+                        app:sliderIndicatorGravity="center_horizontal|bottom"
+                        app:sliderIndicatorMargin="-25dp"
+                        app:sliderIndicatorOrientation="horizontal"
+                        app:sliderIndicatorPadding="3dp"
+                        app:sliderIndicatorRadius="2dp"
+                        app:sliderIndicatorSelectedColor="#838383"
+                        app:sliderIndicatorUnselectedColor="#005E2D"
+                        app:sliderScrollTimeInSec="1"
+                        app:sliderStartAutoCycle="true" />
+                </androidx.cardview.widget.CardView>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/Tb"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:id="@+id/categoryname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Loading"
+                    android:textColor="@color/white"
+                    android:textSize="25dp" />
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <com.game.playparcels.LockableNestedScrollView
+                android:id="@+id/nscroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/belowscroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="35dp">
+
+                    <!--<ImageView
+                        android:scaleType="centerCrop"
+                        android:visibility="gone"
+                        android:id="@+id/slider"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="15dp"
+                        android:src="@drawable/backgroundlogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"/>-->
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerfullcat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/category_postrecycler_newxml" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:padding="5dp">
+
+                        <ProgressBar
+                            android:id="@+id/more"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </com.game.playparcels.LockableNestedScrollView>
+        </RelativeLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</FrameLayout>
+
+    <!--<LinearLayout
+                      android:id="@+id/llone"
+                      android:orientation="horizontal"
+                      android:weightSum="2"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                              <LinearLayout
+                                  android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:id="@+id/imgone"
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo1"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:id="@+id/toastone"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                             <LinearLayout android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo2"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:id="@+id/toasttwo"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:id="@+id/lltwo"
+                      android:orientation="horizontal"
+                      android:weightSum="2"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                             <LinearLayout android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo1"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:id="@+id/toastthree"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                             <LinearLayout android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo2"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:id="@+id/toastfour"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:id="@+id/llthree"
+                      android:orientation="horizontal"
+                      android:weightSum="2"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                             <LinearLayout
+                                 android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo1"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                             <LinearLayout android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo2"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:weightSum="2"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                              <LinearLayout
+                                  android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo1"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                              <LinearLayout android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo2"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:weightSum="2"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                              <LinearLayout
+                                  android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo1"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                              <LinearLayout android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo2"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:weightSum="2"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                              <LinearLayout
+                                  android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo1"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                              <LinearLayout android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo2"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:weightSum="2"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                              <LinearLayout
+                                  android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo1"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                      <LinearLayout
+                          android:layout_weight="1"
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                          <androidx.cardview.widget.CardView
+                              android:padding="10dp"
+                              android:layout_margin="5dp"
+                              app:cardElevation="10dp"
+                              app:cardCornerRadius="10dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                              <LinearLayout android:background="@color/gray"
+                                  android:orientation="vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+
+                                  <ImageView
+                                      android:scaleType="fitXY"
+                                      android:src="@drawable/demo2"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="190dp"/>
+
+                                  <LinearLayout
+                                      android:padding="5dp"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
+                                      <ImageView
+                                          android:padding="5dp"
+                                          android:src="@drawable/pointgreen"
+                                          android:layout_width="30dp"
+                                          android:layout_height="30dp"/>
+                                      <TextView
+                                          android:text="UFC"
+                                          android:layout_gravity="center"
+                                          android:textColor="@color/white"
+                                          android:gravity="center"
+                                          android:textSize="20dp"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="wrap_content"/>
+                                  </LinearLayout>
+                              </LinearLayout>
+                          </androidx.cardview.widget.CardView>
+
+                          <Button
+                              android:text="Added To Queue"
+                              android:layout_margin="15dp"
+                              android:textColor="@color/white"
+                              android:background="@drawable/roundblack"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+                      </LinearLayout>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:gravity="center"
+                      android:layout_gravity="center"
+                      android:padding="20dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+
+                      <ProgressBar
+                          android:id="@+id/progress_circular"
+                          android:outlineSpotShadowColor="@color/gray"
+                          android:layout_width="50dp"
+                          android:layout_height="50dp"/>
+                  </LinearLayout>-->

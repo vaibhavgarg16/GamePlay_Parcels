@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:example="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SingleCategory.GameSingleFragment">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="@color/background"
+        android:padding="5dp"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/blurrylayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <!--<RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <uk.co.deanwild.flowtextview.FlowTextView
+                    android:id="@+id/about"
+                    android:textDirection="rtl"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                <ImageView
+                    android:id="@+id/gamebackgroundimage"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:src="@drawable/backgroundlogin"
+                    android:layout_height="200dp"/>
+&lt;!&ndash;
+                <TextView
+                    android:text="@string/dummy_about"
+                    android:textColor="@color/white"
+                    android:id="@+id/aboutone"
+                    android:justificationMode="inter_word"
+                    android:textSize="17sp"
+                    android:layout_below="@+id/gamebackgroundimage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"/>&ndash;&gt;
+
+               &lt;!&ndash; android:layout_marginEnd="180dp"&ndash;&gt;
+
+                <androidx.cardview.widget.CardView
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="100dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardMaxElevation="20dp"
+                    app:cardElevation="20dp"
+                    android:background="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/mainimage"
+                        android:layout_width="150dp"
+                        android:layout_height="180dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/demo6" />
+                </androidx.cardview.widget.CardView>
+
+                </uk.co.deanwild.flowtextview.FlowTextView>
+
+
+            </RelativeLayout>-->
+
+
+            <ImageView
+                android:id="@+id/gamebackgroundimage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/backgroundlogin" />
+
+
+            <!-- <TextView
+                android:id="@+id/gametitle"
+                android:text="Released On:"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="17dp"
+                android:foregroundGravity="center"
+                android:layout_toStartOf="@+id/mainimagecard"
+                android:textSize="15sp"
+                android:layout_below="@+id/gamebackgroundimage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>-->
+
+
+            <RelativeLayout
+                android:id="@+id/mainimagecard"
+                android:layout_width="390dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="-75dp"
+                android:layout_marginRight="15dp">
+
+                <ImageView
+                    android:id="@+id/mainimage"
+                    android:layout_width="110dp"
+                    android:elevation="24dp"
+                    android:translationZ="10dp"
+                    android:layout_height="140dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/demo6" />
+
+                <TextView
+                    android:id="@+id/gametitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="37dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toEndOf="@id/mainimage"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_light"
+                    android:maxLines="2"
+                    android:text="Released On:"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/releaseDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gametitle"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toEndOf="@id/mainimage"
+                    android:text=" Date "
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mainimagecard"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:text="about"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/about"
+                android:orientation="vertical">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/catelistrecycler_new" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+
+                    <ProgressBar
+                        android:id="@+id/addtoqueuebar"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="204dp"
+                        android:layout_marginBottom="10dp"
+                        android:progressBackgroundTint="@color/white"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/watcht"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginRight="25dp"
+                        android:background="@drawable/youtube_ripple"
+                        android:padding="10dp"
+                        android:text="Watch Trailer"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/addtoqueue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="55dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/background_reverse_gradient"
+                        android:padding="10dp"
+                        android:text="Add To Queue"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+
+                </RelativeLayout>
+
+
+
+                    <TextView
+                        android:id="@+id/populartxt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:paddingLeft="10dp"
+                        android:text="Related Games >"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/game_related_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/nested_recycler_childlist" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/relatedlinear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="150dp"
+                                    android:layout_height="180dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/demo1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Tomb Rider"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Released 17/07/2020"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="150dp"
+                                    android:layout_height="180dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/demo2" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Sniper"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Released 17/07/2020"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="150dp"
+                                    android:layout_height="180dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/demo6" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="The Witcher"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Released 17/07/2020"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="150dp"
+                                    android:layout_height="180dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/demo1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Tomb Rider"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Released 17/07/2020"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="150dp"
+                                    android:layout_height="180dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/demo1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Tomb Rider"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Released 17/07/2020"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="150dp"
+                                    android:layout_height="180dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/demo1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Tomb Rider"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Released 17/07/2020"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="150dp"
+                                    android:layout_height="180dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/demo1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Tomb Rider"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Released 17/07/2020"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="150dp"
+                                    android:layout_height="180dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/demo1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Tomb Rider"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Released 17/07/2020"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/gameplay_games"
+                    android:visibility="visible" />
+
+        </LinearLayout>
+
+    </ScrollView>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:id="@+id/coo"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"/>
+
+</FrameLayout>
